@@ -3,8 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors=require('cors');
-const port=process.env.PORT;
 require('dotenv').config();
+const port=process.env.PORT;
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -31,5 +31,5 @@ mongoose.connect(url,{
 app.use("/",require('./routes/Item'))
 
 app.listen(port, () => {
-    console.log(`app is running on port ${process.env.PORT}`)
+    console.log(`app is running on port ${port}`)
 })
